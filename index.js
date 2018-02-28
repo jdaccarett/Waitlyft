@@ -3,7 +3,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const keys = require('../../config/keys.js');
+const keys = require('./config/keys.js');
 const cookieSession = require('cookie-session'); //access to cookies
 const passport = require('passport');
 const authRoutes = require('./src/routes/authRoutes');
