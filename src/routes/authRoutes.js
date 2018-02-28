@@ -12,9 +12,21 @@ module.exports = (app) => {
   // access was granted, the user will be logged in.  Otherwise,
   // authentication has failed.
   app.get('/auth/facebook/callback',
-
     passport.authenticate('facebook', {
       successRedirect: '/',
       failureRedirect: '/login'
   }));
-}
+
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+
+  app.get('/', (req, res) => {
+    res.send("here");
+  });
+
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  });
+};
