@@ -1,6 +1,6 @@
 // -- Model
 // This is where we're going to create our schema and connect to mongodb.
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 

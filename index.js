@@ -1,15 +1,15 @@
 //Client ID = EJ_Sc_I3JPU-
 //Client Secret = Uuv__DnjX4OhIp-zp5Idt4mexTZfukKQ
 
-import express from 'express';
-import mongoose from 'mongoose';
-import keys from './config/keys.js';
-import cookieSession from 'cookie-session'; //access to cookies
-import passport from 'passport'; //makes use of cookies
-import authRoutes from './src/routes/authRoutes';
-import modelUsers from './src/models/User'; // (1st) order of import matters with models
-import passportConfig from './src/service/passport'; // (2nd) order of import matters with passport
-import bodyParser from 'body-parser';
+const express = require('express');
+const mongoose = require('mongoose');
+const keys = require('../../config/keys.js');
+const cookieSession = require('cookie-session'); //access to cookies
+const passport = require('passport');
+const authRoutes = require('./src/routes/authRoutes');
+const modelUsers = require('./src/models/User'); // (1st) order of import matters with models
+const passportConfig = require('./src/service/passport'); // (2nd) order of import matters with passport
+const bodyParser = require('body-parser');
 
 const app = express();
 

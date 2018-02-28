@@ -1,7 +1,7 @@
-import passport from 'passport';
+const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-import mongoose from 'mongoose';
-import keys from '../../config/keys.js';
+const mongoose = require('mongoose');
+const keys = require('../../config/keys.js');
 
 
 

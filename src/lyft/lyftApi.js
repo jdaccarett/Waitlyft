@@ -1,29 +1,29 @@
-import axios from 'axios';
-
-// Step 1: Obtain an access token via Post Request
-const setAuthToken = function(func){
-  axios({
-    method: 'post',
-    url: 'https://api.lyft.com/oauth/token',
-    headers: {'Content-Type': 'application/json'},
-    data: {
-      grant_type: 'client_credentials',
-      scope: 'public'
-    },
-    auth: {
-      username: 'EJ_Sc_I3JPU-',
-      password: '1O21LiXRAmkUI6TpF_JC6UcOQmPeaFIz'
-    },
-    responseType: 'json'
-  })
-    .then(function(response) {
-      func(response.data.access_token);
-
-  });
-
-}
-
-export default setAuthToken;
+// const axios = require('axios');
+//
+// // Step 1: Obtain an access token via Post Request
+// const setAuthToken = function(func){
+//   axios({
+//     method: 'post',
+//     url: 'https://api.lyft.com/oauth/token',
+//     headers: {'Content-Type': 'application/json'},
+//     data: {
+//       grant_type: 'client_credentials',
+//       scope: 'public'
+//     },
+//     auth: {
+//       username: 'EJ_Sc_I3JPU-',
+//       password: '1O21LiXRAmkUI6TpF_JC6UcOQmPeaFIz'
+//     },
+//     responseType: 'json'
+//   })
+//     .then(function(response) {
+//       func(response.data.access_token);
+//
+//   });
+//
+// }
+//
+// export default setAuthToken;
 
 
 // app.get('/', function(req, res){
