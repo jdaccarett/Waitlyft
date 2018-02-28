@@ -27,7 +27,8 @@ passport.use(new FacebookStrategy({
     clientID: keys.facebookClientID, //FACEBOOK_APP_ID,
     clientSecret: keys.facebookClientSecret, //FACEBOOK_APP_SECRET,
     callbackURL: "/auth/facebook/callback",
-    profileFields: ['id', 'displayName', 'photos', 'email']
+    profileFields: ['id', 'displayName', 'photos', 'email'],
+    proxy: true
   },
   function(accessToken, refreshToken, profile, done) {
     //save information to our Mongo database of the unique user
