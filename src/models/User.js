@@ -10,4 +10,4 @@ const userSchema = new Schema({
 
 
 // to create a model class
-mongoose.model('users', userSchema);
+mongoose.model("users", userSchema);
