@@ -1,6 +1,46 @@
-.landing{
-  height: 95vh;
-  margin: 0;
-  padding: 0;
-  background-color: green;
+
+.landing {
+    background-color: #3498db;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 44vh, 0 55%);
+    height: 95vh;
+    position: relative;
+
+    &__text-box {
+        position: absolute;
+        top: 20%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .heading-primary {
+      color: $color-white;
+      text-align: left;
+
+      backface-visibility: hidden;
+      margin-bottom: 6rem;
+
+      &--main {
+          text-transform: uppercase;
+          display: block;
+          font-size: 5rem;
+          font-weight: bolder;
+          letter-spacing: .2rem;
+      }
+
+      &--sub {
+          font-size: 2.5rem;
+          font-weight: 400;
+          display: block;
+          letter-spacing: .2rem;
+      }
+    }
+
+    .btn{
+      float: left;
+      color: $color-white;
+      background-color: #e84393;
+    }
 }

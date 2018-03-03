@@ -1,12 +1,42 @@
-//@import "abstracts/";
+.header{
+  height: 10rem;
+  text-transform: uppercase;
+  background-color: #3498db;
+  padding: 5rem 5rem;
 
-@import "base/base";
+  color: $color-grey-light-2;
+
+  // Flexbox
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .logo{
+    font-size: 2.5rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .user-nav{
+    display: flex;
+    align-items: center;
+
+    &__item{
+      text-decoration: none;
+      cursor: pointer;
+      color: #92D4FF;
+      font-size: 1.5rem;
+      margin-left: 4rem;
+      transition: all .2s;
+      letter-spacing: .3rem;
+
+      &:hover{
+        color: white;
+      }
+    }
 
 
-//@import "components/";
+  }
 
-@import "layout/grid";
-@import "layout/header";
-@import "layout/navigation";
-
-@import "pages/home";
+}
