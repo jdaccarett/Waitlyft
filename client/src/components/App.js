@@ -6,8 +6,8 @@ import * as actions from '../actions';
 
 import Navbar from './Navbar';
 import Landing from './LandingPage';
+import Dashboard from "./Dashboard";
 
-const Dashboard = () => <h2>Dashboard</h2>
 const SurveyNew = () => <h2>SurveyNew</h2>
 
 
