@@ -9,6 +9,9 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
+import axios from 'axios';
+// test code
+window.axios = axios;
 //action creator
 
 

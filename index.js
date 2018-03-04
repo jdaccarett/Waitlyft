@@ -1,18 +1,19 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const keys = require("./config/keys.js");
-const cookieSession = require("cookie-session"); //access to cookies
-const passport = require("passport");
-const authRoutes = require("./src/routes/authRoutes");
-const tablesRoutes = require("./src/routes/tablesRoutes");
-const modelUsers = require("./src/models/User"); // (1st) order of import matters with models
-const modelTables = require("./src/models/Tables"); // (2st) order of import matters with models
-const passportConfig = require("./src/service/passport"); // (3nd) order of import matters with passport
-const bodyParser = require("body-parser");
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const bodyParser = require('body-parser');
+const keys = require('./config/keys');
+require('./src/models/User');
+require('./src/models/Tables');
+require('./src/service/passport');
+
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-//cookies setup
+app.use(bodyParser.json());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -22,17 +23,21 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//auth routes file and its get functions.
-authRoutes(app);
-tablesRoutes(app);
+require('./src/routes/authRoutes')(app);
+require('./src/routes/tablesRoutes')(app);
 
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
 
-// mongoose connection
-mongoose.connect(keys.mongoURI);
-
-// bodyparser setup
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+  // Express will serve up the index.html file
+  // if it doesn't recognize the route
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`your server is running on port ${PORT}`));
+app.listen(PORT);
