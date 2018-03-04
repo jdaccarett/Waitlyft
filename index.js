@@ -4,8 +4,10 @@ const keys = require("./config/keys.js");
 const cookieSession = require("cookie-session"); //access to cookies
 const passport = require("passport");
 const authRoutes = require("./src/routes/authRoutes");
+const tablesRoutes = require("./src/routes/tablesRoutes");
 const modelUsers = require("./src/models/User"); // (1st) order of import matters with models
-const passportConfig = require("./src/service/passport"); // (2nd) order of import matters with passport
+const modelTables = require("./src/models/Tables"); // (2st) order of import matters with models
+const passportConfig = require("./src/service/passport"); // (3nd) order of import matters with passport
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -22,6 +24,8 @@ app.use(passport.session());
 
 //auth routes file and its get functions.
 authRoutes(app);
+tablesRoutes(app);
+
 
 // mongoose connection
 mongoose.connect(keys.mongoURI);

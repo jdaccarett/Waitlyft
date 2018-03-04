@@ -195,7 +195,9 @@ body {
   .header .logo {
     font-size: 2.5rem;
     display: inline-block;
-    cursor: pointer; }
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff; }
   .header .user-nav {
     display: flex;
     align-items: center; }

@@ -10,7 +10,7 @@ class Landing extends Component {
                     <span className="heading-primary--sub">And save your seat</span>
                 </h1>
 
-                <a href="#" className="btn btn--pink btn--animated">Sign up today</a>
+                <a href="/auth/facebook" className="btn btn--pink btn--animated">Sign up today</a>
             </div>
       </header>
     );

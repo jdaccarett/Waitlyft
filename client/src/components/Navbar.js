@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
 
@@ -23,7 +24,10 @@ class Navbar extends Component {
     console.log("props ",this.props);
     return(
       <header className="header">
-        <span className="logo">WaitLyft</span>
+        <Link
+          to={this.props.auth ? '/dashboard' : '/'}
+          className="logo"> WaitLyft
+        </Link>
         <nav className="user-nav">
           <div className="user-nav__item">About Us</div>
           <div className="user-nav__item">Sign up</div>
