@@ -7,8 +7,7 @@ import * as actions from '../actions';
 import Navbar from './Navbar';
 import Landing from './LandingPage';
 import Dashboard from "./Dashboard";
-
-const SurveyNew = () => <h2>SurveyNew</h2>
+import TableNew from './tables/TableNew';
 
 
 class App extends Component{
@@ -25,7 +24,7 @@ class App extends Component{
             <Navbar />
             <Route exact={true} path="/" component={Landing} />
             <Route exact={true} path="/dashboard" component={Dashboard} />
-            <Route path="/waitlist/new" component={SurveyNew} />
+            <Route path="/waitlist/new" component={TableNew} />
           </div>
         </BrowserRouter>
       </div>

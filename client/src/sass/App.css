@@ -211,3 +211,23 @@ body {
       letter-spacing: .3rem; }
       .header .user-nav__item:hover {
         color: white; }
+
+.tables {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap; }
+  .tables__item {
+    width: 200px;
+    height: 200px;
+    background-color: #00cec9;
+    margin: 2rem;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1.4rem; }
+
+.dashboard {
+  height: 92vh; }
