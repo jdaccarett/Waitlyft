@@ -29,4 +29,14 @@ module.exports = app => {
     
   });
 
+app.post('/api/tables/delete', requireLogin, async (req, res) =>{
+
+  console.log(req.body.id);
+  const remove = await Table.remove({ _id: req.body.id });
+  const tables = await Table.find({_user: req.user.id});
+
+  res.send(tables);
+
+});
+
 };

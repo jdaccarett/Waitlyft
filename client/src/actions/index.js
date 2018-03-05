@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { FETCH_USER } from './types';
 import { FETCH_TABLES } from './types';
+import { DELETE_TABLES } from './types';
+
 
 
 export const fetchUser = () => {
@@ -26,4 +28,14 @@ export const fetchTables = () => {
         .then(res => dispatch({ type: FETCH_TABLES, payload: res.data }));
   };
 
+};
+
+export const deleteTable = (id) => {
+
+  const request = axios.post('/api/tables/delete', {id: id});
+      
+  return {
+      type: DELETE_TABLES,
+      payload: request.data
+  };
 };
