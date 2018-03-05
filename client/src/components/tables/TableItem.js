@@ -23,6 +23,9 @@ class TableItem extends Component {
 
     tick(){
         console.log('call tick');
+        if(this.state.est_wait_time > 0){
+            this.setState({est_wait_time: this.state.est_wait_time - 1});
+        }
         if(this.state.est_wait_time === 0){
             console.log('cleared iterval');
             clearInterval(this.state.timer);
@@ -31,8 +34,6 @@ class TableItem extends Component {
             this.props.deleteTable(this.props.table._id);
             this.props.fetchTables();
 
-        }else{
-            this.setState({est_wait_time: this.state.est_wait_time - 1});
         }
       }
 
