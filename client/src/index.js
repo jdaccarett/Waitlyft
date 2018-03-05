@@ -1,4 +1,5 @@
 //Redux side of our app. and render our root component to the dom.
+//Juan
 import './sass/App.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
