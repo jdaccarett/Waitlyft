@@ -31,20 +31,24 @@ class TableItem extends Component {
             clearInterval(this.state.timer);
             this.setState({est_wait_time: 0});
             console.log("id: ", this.props.table._id);
-            this.props.deleteTable(this.props.table._id);
-            this.props.fetchTables();
+            // this.props.deleteTable(this.props.table._id);
+            // this.props.fetchTables();
 
         }
       }
 
     render() {
         return (
-        <div className={"tables__item"}>
-          <div>TableNumber: {this.props.table.tableNumber}</div>
-          <div>TableSection: {this.props.table.tableSection}</div>
-          <div>Seats:  {this.props.table.seats}</div>
-          <div>Wait Time: {this.state.est_wait_time} mins</div>
-          <div>{this.props.table._id}</div>
+        <div className="tableList__item">
+          <div className="tableList__item-tableNumber">Table Number <span>{this.props.table.tableNumber}</span></div>
+          <div className="tableList__itemCont-one">
+            <div className="tableList__item-section" >Section: {this.props.table.tableSection}</div>
+            <div className="tableList__item-seats">Seats: {this.props.table.seats}</div>
+          </div>
+          <div className="tableList__itemCont-two">
+            <a href="/auth/facebook" className="btn btn--white btn--animated">Reserve</a>
+          </div>
+          <div className="tableList__item-time">Wait Time: <span>{this.state.est_wait_time} mins</span></div>
         </div>
         );
     }

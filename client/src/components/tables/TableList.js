@@ -14,14 +14,14 @@ class TableList extends Component {
   renderTables(){
     return this.props.tables.map((table, i) => {
       return(
-        <TableItem table={table} key={i}/>   
+        <TableItem table={table} key={i}/>
       );
     });
   }
 
   render() {
     return(
-      <div className={"tables"} >
+      <div className={"tableList"} >
           {this.renderTables()}
       </div>
     );

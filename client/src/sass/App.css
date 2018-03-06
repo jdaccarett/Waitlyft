@@ -212,7 +212,7 @@ body {
       .header .user-nav__item:hover {
         color: white; }
 
-.tables {
+.tableList {
   width: 100%;
   height: 100%;
   background-color: #eee;
@@ -220,14 +220,49 @@ body {
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap; }
-  .tables__item {
+  .tableList__item {
     width: 200px;
     height: 200px;
-    background-color: #00cec9;
+    background-color: #74b9ff;
     margin: 2rem;
     border-radius: 5px;
-    padding: 1rem;
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    -webkit-box-shadow: 1px 1px 13px 0px rgba(50, 50, 50, 0.59);
+    -moz-box-shadow: 1px 1px 13px 0px rgba(50, 50, 50, 0.59);
+    box-shadow: 1px 1px 13px 0px rgba(50, 50, 50, 0.59); }
+    .tableList__item-tableNumber {
+      text-align: center;
+      text-align: center;
+      height: 15%;
+      width: 100%;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #fff; }
+      .tableList__item-tableNumber span {
+        margin-left: 1rem; }
+  .tableList__itemCont-one {
+    height: 25%;
+    width: 100%;
+    padding-left: 1rem; }
+  .tableList__item-section {
+    width: 100%;
+    height: 12.5%; }
+  .tableList__item-seats {
+    height: 12.5%;
+    width: 100%; }
+  .tableList__item-time {
+    height: 10%;
+    width: 100%;
+    margin-left: 1rem;
+    padding-top: 2rem; }
+    .tableList__item-time span {
+      margin-left: 4rem;
+      color: white;
+      text-transform: uppercase; }
+  .tableList__itemCont-two {
+    text-align: center;
+    height: 20%;
+    width: 100%; }
 
 .dashboard {
   height: 92vh; }
