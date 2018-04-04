@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "node-sass-chokidar": "0.0.3",
+    "node-where": "^1.1.0",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

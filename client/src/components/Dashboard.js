@@ -1,19 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import TableList from './tables/TableList';
+import React, { Component } from "react";
+import TableList from "./tables/TableList";
+import TableForm from "./tables/TableForm";
 
-const Dashboard = () => {
-    return (
-        <div>
-            Dashboard
-            <div className="">
-                <Link to="/waitlist/new" className="">
-                <i className="material-icons">add</i>
-                </Link>
-            </div>
-            < TableList />
-        </div>
+class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { lat: "", lng: "" };
+
+    this.getCoordinates = this.getCoordinates.bind(this);
+  }
+
+  getCoordinates(lat, lng) {
+    this.setState({
+      lat,
+      lng
+    });
+  }
+
+  render() {
+    console.log(this.state);
+    const address = this.state.lat;
+
+    const display = address ? (
+      <TableList coordinates={this.state} />
+    ) : (
+      <div className="">
+        <h2>Enter Your Address First</h2>
+        <TableForm getAddress={this.getCoordinates} />
+      </div>
     );
-};
+
+    return (
+      <div>
+        Dashboard
+        {display}
+      </div>
+    );
+  }
+}
 
 export default Dashboard;

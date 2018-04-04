@@ -1,36 +1,41 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchTables } from '../../actions'; // action creator.
-import TableItem from './TableItem';
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchTables, fetchLyftToken } from "../../actions"; // action creator.
+import TableItem from "./TableItem";
 
 class TableList extends Component {
+  //lifecylce method.
+  componentDidMount() {
+    this.props.fetchTables();
+    this.props.fetchLyftToken();
+  }
 
-  //lifecylce method.
-  componentDidMount(){
-    this.props.fetchTables();
-  }
+  renderTables() {
+    return this.props.tables.map((table, i) => {
+      return (
+        <TableItem
+          lyftToken={this.props.lyftToken}
+          table={table}
+          address={this.props.coordinates}
+          key={i}
+        />
+      );
+    });
+  }
 
-  renderTables(){
-    return this.props.tables.map((table, i) => {
-      return(
-        <TableItem table={table} key={i}/>
-      );
-    });
-  }
-
-  render() {
-    return(
-      <div className={"tableList"} >
-          {this.renderTables()}
-      </div>
-    );
-  }
+  render() {
+    return <div className={"tableList"}>          {this.renderTables()}</div>;
+  }
 }
 
 //wire up to redux.
-function mapStateToProps(state){
-  return { tables: state.tables };
+function mapStateToProps(state) {
+  return {
+    tables: state.tables,
+    lyftToken: state.lyftToken
+  };
 }
 
-export default connect(mapStateToProps, { fetchTables })(TableList);
+export default connect(mapStateToProps, { fetchTables, fetchLyftToken })(
+  TableList
+);

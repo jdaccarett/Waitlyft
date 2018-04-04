@@ -107,6 +107,41 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
+input, label {
+  margin: 5px 5px; }
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; }
+  .popup__form {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background: white;
+    text-align: center;
+    float: left;
+    margin: 30px auto;
+    width: 450px; }
+    .popup__form-street {
+      width: 100%; }
+    .popup__form-city {
+      width: 50%; }
+    .popup__form-state {
+      width: 15%; }
+    .popup__form-zip {
+      width: 28%; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -216,6 +251,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #eee;
+  position: relative;
   display: flex;
   justify-content: center;
   align-content: flex-start;
